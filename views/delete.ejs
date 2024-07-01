@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td,th{
+            border : 3px solid black
+        }
+    </style>
+</head>
+<body>
+    <h1>Wnat to Delete the user ?</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+        </tr>
+        <tr>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+        </tr>
+    </table>
+    <form action="/user/<%= user.id %>?_method=delete" method="POST"><br><br><br>
+        <input type="text" name="password" placeholder="Enter Your Password Here"><br><br>
+        <button>Delete User</button>
+    </form>
+</body>
+</html>

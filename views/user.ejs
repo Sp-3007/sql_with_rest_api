@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,tr{
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Showing One Data</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>EMAIL</td>
+        </tr>
+        <tr>
+            <td><%=user.id%></td>
+            <td><%=user.name%></td>
+            <td><%=user.email%></td>
+        </tr>
+    </table>
+    <br><br>
+    <h1>Want to change name?</h1>
+    <form method="post" action="/user/<%=user.id%>?_method=patch">
+        <input type="text" name="name" placeholder="Enter Your Name Here">
+        <br><br>
+        <input type="text" name="password" placeholder="Enter Your password Here">
+        <br><br><br>
+        <button>Change Name</button>
+    </form>
+</body>
+</html>
